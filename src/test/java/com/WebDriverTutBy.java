@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class WebDriverTutBy {
 
     /**
-     * Find positions for "Специалист по тестированию" in tut.by
+     * Find positions for "Г‘ГЇГҐГ¶ГЁГ Г«ГЁГ±ГІ ГЇГ® ГІГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГѕ" in tut.by
      * no input parameters
      * no return parameters
      */
@@ -28,12 +28,12 @@ public class WebDriverTutBy {
 
         Assert.assertTrue(driver.getTitle().contains("TUT.BY"));
 
-        driver.findElement(By.linkText("Работа")).click();
+        driver.findElement(By.linkText("Р Р°Р±РѕС‚Р°")).click();
 
-        driver.findElement(By.name("text")).sendKeys("Специалист по тестированию");
+        driver.findElement(By.name("text")).sendKeys("РЎРїРµС†РёР°Р»РёСЃС‚ РїРѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЋ");
         driver.findElement(By.name("text")).sendKeys(Keys.RETURN);
         
-        String regex = "Специалист по тестированию";
+        String regex = "РЎРїРµС†РёР°Р»РёСЃС‚ РїРѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЋ";
         List<WebElement> links = driver.findElements(By.partialLinkText(regex));
 
         if (links.size() == 0) {
